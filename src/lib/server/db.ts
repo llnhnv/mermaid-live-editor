@@ -2,7 +2,8 @@ import pg from 'pg';
 
 const { Pool } = pg;
 
-const databaseUrl = process.env.DATABASE_URL;
+// DATABASE_URL must be set in Vercel project environment variables
+const databaseUrl = process.env['DATABASE_URL'];
 
 export const isDbEnabled = !!databaseUrl;
 
