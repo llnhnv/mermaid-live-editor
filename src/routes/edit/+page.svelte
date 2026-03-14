@@ -7,7 +7,10 @@
   import McWrapper from '$/components/McWrapper.svelte';
   import MermaidChartIcon from '$/components/MermaidChartIcon.svelte';
   import EditorChooserModal from '$/components/migration/EditorChooserModal.svelte';
+  import LoginDialog from '$/components/LoginDialog.svelte';
   import Navbar from '$/components/Navbar.svelte';
+  import SavedDiagrams from '$/components/SavedDiagrams.svelte';
+  import SaveToSupabase from '$/components/SaveToSupabase.svelte';
   import PanZoomToolbar from '$/components/PanZoomToolbar.svelte';
   import Preset from '$/components/Preset.svelte';
   import Share from '$/components/Share.svelte';
@@ -90,6 +93,9 @@
       <HistoryIcon />
     </Toggle>
     <Share />
+    <SavedDiagrams />
+    <SaveToSupabase />
+    <LoginDialog />
     <McWrapper>
       <Button
         variant="accent"

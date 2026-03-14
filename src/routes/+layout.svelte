@@ -1,4 +1,5 @@
 <script lang="ts">
+  import AuthGuard from '$/components/AuthGuard.svelte';
   import { Toaster } from '$/components/ui/sonner/index.js';
   import { loadingStateStore } from '$/util/loading';
   import { toggleDarkTheme } from '$/util/state';
@@ -39,11 +40,13 @@
 </script>
 
 <ModeWatcher />
-<Toaster />
+<Toaster position="top-right" />
 
-<main class="h-dvh">
-  {@render children()}
-</main>
+<AuthGuard>
+  <main class="h-[100dvh]">
+    {@render children()}
+  </main>
+</AuthGuard>
 
 {#if $loadingStateStore.loading}
   <div
