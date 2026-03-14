@@ -1,5 +1,4 @@
 import { browser } from '$app/environment';
-import { nanoid } from 'nanoid';
 import { get, writable } from 'svelte/store';
 import { currentUser } from './auth';
 import { isSupabaseEnabled } from './supabase';
@@ -51,7 +50,7 @@ export interface SavedDiagram {
   created_at: string;
 }
 
-const generateShortId = (): string => nanoid(7);
+const generateShortId = (): string => crypto.randomUUID().replace(/-/g, '').slice(0, 7);
 
 const getCurrentUserId = (): string | null => {
   const user = get(currentUser);
